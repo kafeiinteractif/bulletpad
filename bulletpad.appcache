@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# v1
+
+# assets
+CACHE:
+index.html
+stylesheet.css
+main.js
+vue.js
+
+NETWORK:
+*

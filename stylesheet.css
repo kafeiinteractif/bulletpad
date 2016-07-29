@@ -1,0 +1,22 @@
+body {
+  font-style: monospace;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  background-color: #efefef;
+  padding: 10px;
+  margin: 0px;
+  border-bottom: 1px dashed #fff;
+  list-style: none;
+}
+
+li button {
+  color: #600;
+  background: none;
+  float: right;
+  border: 0;
+}
