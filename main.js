@@ -5,8 +5,16 @@
 window.onload = function () {
   new Vue({
     el: '#app',
-    data: {
-      todos: listTodo(),
+    data: function () {
+      if (localStorage.getItem("lystical") === null) {
+        return { todos: [
+          {text: 'one'},
+          {text: 'two'}
+        ]};
+      }
+      else {
+        return { todos: JSON.parse(localStorage.getItem("lystical")) };
+      }
     },
     methods: {
       addTodo: function () {
@@ -23,17 +31,4 @@ window.onload = function () {
       },
     }
   });
-}
-
-// Load values or provide examples
-function listTodo () {
-  if (localStorage.getItem("lystical") === null) {
-    return [
-      {text: 'one'},
-      {text: 'two'}
-    ];
-  }
-  else {
-    return JSON.parse(localStorage.getItem("lystical"));
-  }
 }
