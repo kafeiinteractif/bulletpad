@@ -18,7 +18,7 @@ window.onload = () => {
     },
     methods: {
       addTodo() {
-        let input = this.newTodo.trim()
+        const input = this.newTodo.trim()
         if (input) {
           this.todos.push({ text: input })
           this.newTodo = ''
@@ -26,8 +26,11 @@ window.onload = () => {
         }
       },
       removeTodo(index) {
-        this.todos.splice((this.todos.length - 1 - index), 1)
-        localStorage.setItem('lystical', JSON.stringify(this.todos));
+        const item = this.todos.length - 1 - index;
+        if (confirm(`Delete this?\n${this.todos[item].text}`) == true) {
+          this.todos.splice(item, 1)
+          localStorage.setItem('lystical', JSON.stringify(this.todos));
+        }
       },
     },
     filters: {

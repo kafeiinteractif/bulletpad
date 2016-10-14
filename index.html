@@ -11,7 +11,7 @@
 <body>
 
 <div id="app">
-  <textarea v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="new note"></textarea>
+  <textarea v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="new note >"></textarea>
   <ul>
     <li v-for="todo in todos | reverse">
       {{ todo.text }}

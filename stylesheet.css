@@ -2,6 +2,7 @@ body {
   font-style: monospace;
   max-width: 420px;
   min-width: 320px;
+  background-color: #DEDEDE;
 }
 
 textarea {
