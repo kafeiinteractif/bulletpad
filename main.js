@@ -26,9 +26,14 @@ window.onload = () => {
         }
       },
       removeTodo(index) {
-        this.todos.splice(index, 1)
+        this.todos.splice((this.todos.length - 1 - index), 1)
         localStorage.setItem('lystical', JSON.stringify(this.todos));
       },
+    },
+    filters: {
+      reverse(value) {
+        return value.slice().reverse();
+      }
     }
   });
 }
