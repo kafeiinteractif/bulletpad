@@ -8,8 +8,8 @@ window.onload = () => {
     data() {
       if (localStorage.getItem("lystical") === null) {
         return { todos: [
-          {text: 'one'},
-          {text: 'two'}
+          {text: 'to delete press the × beside the entry and then enter to confirm'},
+          {text: 'to create a note type in the field at the top and press enter'}
         ]};
       }
       else {
