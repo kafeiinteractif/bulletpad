@@ -2,10 +2,10 @@
 // Bulletpad app
 //
 // Loads local storage if present, saves incoming data as it comes in.
-window.onload = function () {
+window.onload = () => {
   new Vue({
     el: '#app',
-    data: function () {
+    data() {
       if (localStorage.getItem("lystical") === null) {
         return { todos: [
           {text: 'one'},
@@ -17,15 +17,15 @@ window.onload = function () {
       }
     },
     methods: {
-      addTodo: function () {
-        var input = this.newTodo.trim()
+      addTodo() {
+        let input = this.newTodo.trim()
         if (input) {
           this.todos.push({ text: input })
           this.newTodo = ''
           localStorage.setItem('lystical', JSON.stringify(this.todos));
         }
       },
-      removeTodo: function (index) {
+      removeTodo(index) {
         this.todos.splice(index, 1)
         localStorage.setItem('lystical', JSON.stringify(this.todos));
       },
